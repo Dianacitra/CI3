@@ -1,19 +1,19 @@
-<div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap align-items-center">
-        <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark " href="#"></a>
-          </div>
-          <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark " href="#">DIANA CITRA PANJAITAN</a>
-          </div>
-        </div>
-      </header>
-
-      <div class="nav-scroller py-1 mb-2 text-dark">
-        <nav class="nav d-flex bg-success">
-          <a class="py-2 px-3 text-dark" href="<?php echo base_url() ?>index.php/Home">Home</a>
-          <a class="py-2 px-3 text-dark" href="<?php echo base_url() ?>index.php/About">About</a>
-          <a class="py-2 px-3 text-dark" href="<?php echo base_url() ?>index.php/Contact">Contact</a>
-        </nav>
-      </div>
+<nav class="navbar navbar-inverse">
+  <a class= "navbar-brand" href="#">Beauty Blogger</a> 
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                     
+        </button>
+      </div>   
+      <div class="single-page-nav sticky-wrapper" id="tmNavbar">
+        <ul class="nav navbar-nav">
+          <li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
+          <li><a class="page-scroll" href="<?php echo site_url()?>About/">About</a></li>
+          <li><a class="page-scroll" href="../V_Blog">Blog</a></li>
+        </ul>
+      </div>   
+    </div>
+  </nav>  

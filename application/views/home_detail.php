@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
- 	 <title>Riska Novitasari</title>
+ 	 <title>DIANA CITRA</title>
 
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap.css">
@@ -13,7 +13,7 @@
   <body>
  
   <nav class="navbar navbar-fixed-top">
-	<a class= "navbar-brand" href="#">WEB RISKA</a> 
+	<a class= "navbar-brand" href="#">Beauty Blogger</a> 
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle">
@@ -26,7 +26,7 @@
 				<ul class="nav navbar-nav">
 					<li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
 					<li><a class="page-scroll" href="<?php echo site_url()?>about/">About</a></li>
-					<li><a class="page-scroll" href="<?php echo site_url()?>V_Blog/">Blog</a></li>
+					<li><a class="page-scroll" href="V_Blog">Blog</a></li>
 				</ul>
 			</div>   
 		</div>
