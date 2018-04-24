@@ -20,6 +20,9 @@ class V_blog extends CI_Controller {
 
 	public function tambah()
 	{
+
+		
+
 		$this->load->model('List_Blog');
 
 		$this->load->helper('form');

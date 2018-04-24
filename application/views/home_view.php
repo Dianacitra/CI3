@@ -23,6 +23,7 @@
           <li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
           <li><a class="page-scroll" href="<?php echo site_url()?>About/">About</a></li>
           <li><a class="page-scroll" href="../V_Blog">Blog</a></li>
+          <li><a class="page-scroll" href="Category">Category</a></li>
         </ul>
       </div>   
     </div>
@@ -81,6 +82,21 @@
     <br><br><br><br><br><br>
 
   
+  <?php echo form_open( 'Category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
+
+<div class="form-group">
+   <label for="cat_name">Nama Kategori</label>
+   <input type="text" class="form-control" name="cat_name" value="<?php echo set_value('cat_name') ?>" required>
+   <div class="invalid-feedback">Isi judul dulu gan</div>
+</div>
+
+<div class="form-group">
+   <label for="text">Deskripsi</label>
+   <input type="text" class="form-control" name="cat_description" value="<?php echo set_value('cat_description') ?>" required>
+   <div class="invalid-feedback">Isi deskripsinya dulu gan</div>
+</div>
+<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="assets/js/scripts.js"></script>
