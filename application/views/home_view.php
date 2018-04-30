@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   <title>Diana</title>
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    </head>
-  <body>
- 
-  <nav class="navbar navbar-inverse">
-  <a class= "navbar-brand" href="#">Beauty Blogger</a> 
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                     
-        </button>
-      </div>   
-      <div class="single-page-nav sticky-wrapper" id="tmNavbar">
-        <ul class="nav navbar-nav">
-          <li><a class="page-scroll" href="<?php echo site_url()?>Home/">Home</a></li>
-          <li><a class="page-scroll" href="<?php echo site_url()?>About/">About</a></li>
-          <li><a class="page-scroll" href="../V_Blog">Blog</a></li>
-          <li><a class="page-scroll" href="Category">Category</a></li>
-        </ul>
-      </div>   
-    </div>
-  </nav>  
+<?php 
+defined('BASEPATH') or exit('No direct script access allowed');
+$this->load->view('paging/header.php')
+ ?>
+ <?php $this->load->view('paging/navbar') ?>
   <br><br><br><br>
 <div class="container">
       <div class="col-xs-12 col-sm-9 col-md-9">
@@ -82,20 +57,20 @@
     <br><br><br><br><br><br>
 
   
-  <?php echo form_open( 'Category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
+  <!-- <?php //echo form_open( 'Category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
 
 <div class="form-group">
    <label for="cat_name">Nama Kategori</label>
-   <input type="text" class="form-control" name="cat_name" value="<?php echo set_value('cat_name') ?>" required>
+   <input type="text" class="form-control" name="cat_name" value="<?php// echo set_value('cat_name') ?>" required>
    <div class="invalid-feedback">Isi judul dulu gan</div>
 </div>
 
 <div class="form-group">
    <label for="text">Deskripsi</label>
-   <input type="text" class="form-control" name="cat_description" value="<?php echo set_value('cat_description') ?>" required>
+   <input type="text" class="form-control" name="cat_description" value="<?php //echo set_value('cat_description') ?>" required>
    <div class="invalid-feedback">Isi deskripsinya dulu gan</div>
 </div>
-<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button>
+<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button> -->
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>

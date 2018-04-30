@@ -20,10 +20,9 @@ class V_blog extends CI_Controller {
 
 	public function tambah()
 	{
-
-		
-
 		$this->load->model('List_Blog');
+		$this->load->model('category_model');
+		$data['categories'] = $this->category_model->get_all_categories();
 
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -35,12 +34,12 @@ class V_blog extends CI_Controller {
 
 
 
-		if($this->form_validation->run()==FALSE){
-			$this->load->view('tambah');
+		if($this->form_validation->run() === FALSE){
+			$this->load->view('tambah', $data);
 		}
 		else{
 			if ($this->input->post('simpan')) {
-			$upload = $this->List_Blog->upload();
+				$upload = $this->List_Blog->upload();
 
 				if ($upload['result'] == 'success') {
 				$this->List_Blog->insert($upload);
@@ -52,6 +51,19 @@ class V_blog extends CI_Controller {
 		$this->load->view('tambah', $data);
 		}
 
+	}
+
+	public function edit($id){
+		$this->load->model('List_Blog');
+		$data['category'] = $this->Category_model->get_all_category();
+		$data['single'] = $this->List_Blog->get_single($id);
+
+		if($this->input->post('edit')){
+			$upload=$this->List_Blog->upload();
+			$this->List_Blog->update($upload,$id);
+			redirect('V_blog');
+		}
+		$this->load->view('update_blog');
 	}
 
 	public function delete($id){

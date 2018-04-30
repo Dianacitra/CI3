@@ -12,6 +12,12 @@ class List_Blog extends CI_Model {
 	{
 		$query = $this->db->query('select * from blog where id='.$id);
 		return $query->result();
+
+		$this->db->select('*');
+		$this->db->from('blog');
+		$this->db->join('categories', 'blog.id_category = categories.id_category');
+		$this->db->where('blog.id='.$id);
+		return $this->db->get()->result();
 	}
 
 	public function upload()
@@ -34,7 +40,7 @@ class List_Blog extends CI_Model {
 
 	public function insert($upload)
 	{
-		$data = array(
+		$data = array(	
 			'id' => '',
 			'judul' => $this->input->post('judul'),
 			'konten' => $this->input->post('konten'),
@@ -42,7 +48,8 @@ class List_Blog extends CI_Model {
 			'tanggal' => $this->input->post('tanggal'),
 			'penerbit' => $this->input->post('penerbit'),
 			'penyunting' => $this->input->post('penyunting'),
-			'sumber' => $this->input->post('sumber')
+			'sumber' => $this->input->post('sumber'),
+			'id_category' => $this->input->post('id_category'),
 			
 		);
 		$this->db->insert('blog', $data);
