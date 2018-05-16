@@ -3,11 +3,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class V_blog extends CI_Controller {
 
+
 	public function index()
 	{
 		$this->load->model('List_Blog');
-		$data['List_Blog'] = $this->List_Blog->get_artikels();
+		
+		// Dapatkan data dari model Blog dengan pagination
+		// Jumlah artikel per halaman
+		$limit_per_page = 3;
+
+		// URI segment untuk mendeteksi "halaman ke berapa" dari URL
+		$start_index = ( $this->uri->segment(3) ) ? $this->uri->segment(3) : 0;
+
+		// Dapatkan jumlah data 
+		$total_records = $this->List_Blog->get_total();
+		
+		if ($total_records > 0) {
+			// Dapatkan data pada halaman yg dituju
+			$data["all_artikel"] = $this->List_Blog->get_all_artikel($limit_per_page, $start_index);
+			
+			// Konfigurasi pagination
+			$config['base_url'] = base_url() . 'V_blog/index';
+			$config['total_rows'] = $total_records;
+			$config['per_page'] = $limit_per_page;
+			$config["uri_segment"] = 3;
+			
+			$this->pagination->initialize($config);
+				
+			// Buat link pagination
+			$data["links"] = $this->pagination->create_links();
+		}
+
+		$this->load->view("paging/header");
+		// Passing data ke view
 		$this->load->view('home_view', $data);
+		$this->load->view("paging/footer");
 	}
 
 	public function detail($id)
@@ -55,15 +85,16 @@ class V_blog extends CI_Controller {
 
 	public function edit($id){
 		$this->load->model('List_Blog');
-		$data['category'] = $this->Category_model->get_all_category();
+		$this->load->model('Category_model');
+		$data['category'] = $this->Category_model->get_all_categories();
 		$data['single'] = $this->List_Blog->get_single($id);
 
 		if($this->input->post('edit')){
 			$upload=$this->List_Blog->upload();
-			$this->List_Blog->update($upload,$id);
+			$this->List_Blog->update($upload ,$id);
 			redirect('V_blog');
 		}
-		$this->load->view('update_blog');
+		$this->load->view('update_blog',$data);
 	}
 
 	public function delete($id){

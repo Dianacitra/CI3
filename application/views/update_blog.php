@@ -43,31 +43,32 @@
         <tr>
           <td>ID BLOG</td>
           <td>:</td>
-          <td><input type="text" name="id" readonly value="<?php echo $key->id_blog; ?>"></td>
+          <td><input type="text" name="id" readonly value="<?php echo $key->id; ?>"></td>
         </tr>
         <tr>
           <td>Judul</td>
           <td>:</td>
-          <td><input type="text" name="judul" value="<?php echo set_value('judul'); ?>"></td>
+          <td><input type="text" name="judul" value="<?php echo set_value('judul', $key->judul) ?>"></td>
         </tr>
         <tr>
-          <label>Kategori</label>
-            <select name="id_kategori" class="form-control" required>
+          <td>Kategori</td>
+          <td>:</td>
+          <td> <select name="id_kategori" class="form-control" required>
               <option value="">Choose Category</option>
-              <?php foreach($Category as $Category): ?>
-              <option value="<?php echo $categories->id_category; ?>"><?php echo $categories->Category; ?></option>
+              <?php foreach($category as $category): ?>
+              <option value="<?php echo $category->id_category; ?>"><?php echo $category->cat_name ; ?></option>
               <?php endforeach; ?>
-            </select>
+            </select></td>
         </tr>
         <tr>
           <td>Konten</td>
           <td>:</td>
-          <td><input type="text" name="konten" value="<?php echo set_value('konten'); ?>"></td>
+          <td><input type="text" name="konten" value="<?php echo set_value('konten', $key->konten); ?>"></td>
         </tr>
          <tr>
           <td>Tanggal </td>
           <td>:</td>
-          <td><input type="date" name="tanggal" value="<?php echo set_value('tanggal'); ?>"></td>
+          <td><input type="date" name="tanggal" value="<?php echo set_value('tanggal', $key->tanggal); ?>"></td>
         </tr>
        <tr>
           <td>Gambar</td>
@@ -77,17 +78,17 @@
         <tr>
           <td>Penerbit</td>
           <td>:</td>
-          <td><input type="text" name="penerbit" value="<?php echo set_value('penerbit'); ?>"></td>
+          <td><input type="text" name="penerbit" value="<?php echo set_value('penerbit', $key->penerbit); ?>"></td>
         </tr>
         <tr>
           <td>Penyunting</td>
           <td>:</td>
-          <td><input type="text" name="penyunting" value="<?php echo set_value('penyunting'); ?>"></td>
+          <td><input type="text" name="penyunting" value="<?php echo set_value('penyunting', $key->penyunting); ?>"></td>
         </tr>
         <tr>
           <td>Sumber</td>
           <td>:</td>
-          <td><input type="text" name="sumber" value="<?php echo set_value('sumber'); ?>"></td>
+          <td><input type="text" name="sumber" value="<?php echo set_value('sumber', $key->sumber); ?>"></td>
         </tr>
 
         <tr>

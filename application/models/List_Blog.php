@@ -3,6 +3,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class List_Blog extends CI_Model {
 
+	public function get_all_artikel( $limit = FALSE, $offset = FALSE ) 
+    {
+        // Jika variable $limit ada pada parameter maka kita limit query-nya
+        if ( $limit ) {
+            $this->db->limit($limit, $offset);
+        }
+    	// Query Manual
+    	// $query = $this->db->query('
+    	// 		SELECT * FROM blogs
+    	// 	');
+
+        // Memakai Query Builder
+        // Urutkan berdasar tanggal
+        $this->db->order_by('blog.tanggal', 'DESC');
+
+        // Inner Join dengan table Categories
+        $this->db->join('categories', 'blog.id_category = categories.id_category');
+	     $query = $this->db->get('blog');
+
+    	// Return dalam bentuk object
+    	return $query->result();
+    }
+
+    public function get_total() 
+    {
+        // Dapatkan jumlah total artikel
+        return $this->db->count_all("blog");
+    }
+
 	public function get_artikels(){
 		$query = $this->db->get('blog');
 		return $query->result();
@@ -60,7 +89,7 @@ class List_Blog extends CI_Model {
 	//		$tanggal = $this->db->escape($post['tanggal']);
 		//
 		//	$sql = $this->db->query('UPDATE blog SET judul = $judul, konten = $konten, tanggal = $tanggal WHERE id ='.intval($id));
-		//		return TRUE;
+		//		return TRUE;	 
 	//	}
 	//}
 	public function delete($id){

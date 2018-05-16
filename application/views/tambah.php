@@ -10,13 +10,15 @@ Add Artikel
           <td><input type="text" name="judul" value="<?php echo set_value('judul'); ?>"></td>
         </tr>
           <tr>
-            <label>Kategori</label>
+            <td><label>Kategori</label></td><td>:</td>
+          <td>
               <select name="id_category" class="form-control" required>
                 <option value="">Pilih Kategori</option>
                 <?php foreach ($categories as $key): ?> 
                 <option value="<?php echo $key->id_category; ?>"><?php echo $key->cat_name; ?></option>
               <?php endforeach; ?>
               </select>
+            </td>
           </tr>
         <tr>
           <td>Konten</td>
