@@ -1,3 +1,7 @@
+<?php if (!$this->session->userdata('logged_in')) {
+    redirect('User/login');
+} ?>
+
 <?php echo form_open( 'Category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
 
 

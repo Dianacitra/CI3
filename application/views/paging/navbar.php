@@ -16,6 +16,26 @@
           <li><a class="page-scroll" href="<?php echo site_url()?>Category">Category</a></li>
           <li><a class="page-scroll" href="<?php echo site_url()?>datatables">Datatables</a></li>
         </ul>
+
+                <?php if(!$this->session->userdata('logged_in')) : ?>
+
+                    <div class="btn-group" role="group" aria-label="Data baru">
+                        <?php echo anchor('user/register', 'Register', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('user/login', 'Login', array('class' => 'btn btn-outline-light')); ?>
+
+                    </div>
+
+                <?php endif; ?>
+
+                <?php if($this->session->userdata('logged_in')) : ?>
+                    <div class="btn-group" role="group" aria-label="Data baru">
+
+                        <?php echo anchor('V_blog/tambah', 'Artikel Baru', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('Category/create', 'Kategori Baru', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('user/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+                    </div>
+                <?php endif; ?>
+
       </div>   
     </div>
   </nav>  

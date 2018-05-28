@@ -1,3 +1,8 @@
+<?php if (!$this->session->userdata('logged_in')) {
+    redirect('User/login');
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

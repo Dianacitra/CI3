@@ -1,3 +1,7 @@
+<?php if (!$this->session->userdata('logged_in')) {
+    redirect('User/login');
+} ?>
+
 <?php 
 defined('BASEPATH') or exit('No direct script access allowed');
 $this->load->view('paging/header.php')
