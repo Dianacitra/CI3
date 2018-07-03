@@ -31,52 +31,8 @@ $this->load->view('paging/header.php')
           </div>
         </div>
         <?php endforeach ?>
-        <!--<div class="container">
-      <table>
-        <tr>
-          <td>Judul</td>
-          <td>:</td>
-          <td><input type="text" name="input_judul" value="<?php //echo set_value('input_judul'); ?>"></td>
-        </tr>
-        <tr>
-          <td>Content</td>
-          <td>:</td>
-          <td><input type="text" name="input_content" value=""></td>
-        </tr>
-        <tr>
-          <td>Tanggal </td>
-          <td>:</td>
-          <td><input type="text" name="input_tanggal" value=""></td>
-        </tr>
-        <tr>
-          <td>Gambar</td>
-          <td>:</td>
-          <td><input type="file" name="input_gambar"></td>
-        </tr>
-        <tr>
-          <td colspan="3"><a href="tambah" class="btn-sm btn-danger"> Tambah</a></td>
-        </tr>
-        <tr>
-      </table>
-    </div>-->
+     
     <br><br><br><br>
-
-
-   <!--  <div class="container">
-<nav aria-label="Page navigation example">
- <ul class="pagination justify-content-center">
-   <li class="page-item disabled">
-     <a class="page-link" href="#" tabindex="-1">Previous</a>
-   </li>
-   <li class="page-item"><a class="page-link" href="#">1</a></li>
-   <li class="page-item"><a class="page-link" href="#">2</a></li>
-   <li class="page-item"><a class="page-link" href="#">3</a></li>
-   <li class="page-item">
-     <a class="page-link" href="#">Next</a>
-   </li>
- </ul>
-</nav>
-<div> -->
 <?php
         // $links ini berasal dari fungsi pagination
         // Jika $links ada (data melebihi jumlah max per page), maka tampilkan
@@ -87,22 +43,6 @@ $this->load->view('paging/header.php')
 
     <br><br>
   </div>
-
-  
-  <!-- <?php //echo form_open( 'Category/create', array('class' => 'needs-validation', 'novalidate' => '') ); ?>
-
-<div class="form-group">
-   <label for="cat_name">Nama Kategori</label>
-   <input type="text" class="form-control" name="cat_name" value="<?php// echo set_value('cat_name') ?>" required>
-   <div class="invalid-feedback">Isi judul dulu gan</div>
-</div>
-
-<div class="form-group">
-   <label for="text">Deskripsi</label>
-   <input type="text" class="form-control" name="cat_description" value="<?php //echo set_value('cat_description') ?>" required>
-   <div class="invalid-feedback">Isi deskripsinya dulu gan</div>
-</div>
-<button id="submitBtn" type="submit" class="btn btn-primary">Simpan</button> -->
 
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
